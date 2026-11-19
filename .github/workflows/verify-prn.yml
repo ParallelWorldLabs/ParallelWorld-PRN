@@ -1,0 +1,51 @@
+# PRN 集中仓守卫：推送后自动校验合同目录完整性，违规提交分钟内自动回退并告警。
+# 运行成本：公开仓库 + 标准 runner（ubuntu-latest）完全免费，不占用项目方任何付费额度。
+# 配置方法见 docs/actions-guard/README.md（三步完成）。
+name: PRN 守卫
+
+on:
+  push:
+    # 按集中仓实际默认分支名调整（GitHub 新仓库默认 main）。
+    branches: [main]
+    paths: ['agreements/**']
+
+permissions:
+  contents: write   # 违规时执行 git revert 并推送回退提交
+  issues: write      # 违规时创建告警 Issue
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest   # 固定使用标准 runner：公开仓库免费且不限量
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # 完整历史：名单单调性校验需要读取父提交版本索引
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: 校验合同完整性（验签 + 摘要重算 + 名单单调性 + 信封钥匙覆盖）
+        run: node .github/scripts/verify-prn.mjs
+        env:
+          PRN_BEFORE: ${{ github.event.before }}
+          PRN_AFTER: ${{ github.event.after }}
+      - name: 违规提交自动回退并告警
+        if: failure()
+        run: |
+          git config user.name "prn-guard"
+          git config user.email "actions@github.com"
+          # 告警正文公开触发推送的认证账号（github.actor 为 GitHub 认证层记录，不可伪造），
+          # 与违规提交链接一并公示；措辞保持中性事实陈述。
+          if git revert --no-edit "${{ github.event.after }}"; then
+            git push
+            gh issue create --title "PRN 守卫：已自动回退违规提交 $(echo ${{ github.event.after }} | cut -c1-12)" \
+              --body "触发推送的账号：${{ github.actor }}
+          违规提交：${{ github.server_url }}/${{ github.repository }}/commit/${{ github.event.after }}
+          校验失败的提交已自动回退，请核查仓库活动与相关签署方。"
+          else
+            gh issue create --title "PRN 守卫：违规提交回退失败，需人工处理" \
+              --body "触发推送的账号：${{ github.actor }}
+          违规提交：${{ github.server_url }}/${{ github.repository }}/commit/${{ github.event.after }}
+          提交校验失败且自动回退冲突，请仓库管理员尽快核查。"
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
