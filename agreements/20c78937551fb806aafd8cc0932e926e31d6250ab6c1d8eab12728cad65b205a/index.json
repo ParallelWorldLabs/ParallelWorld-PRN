@@ -3,15 +3,17 @@
   "contract": "20c78937551fb806aafd8cc0932e926e31d6250ab6c1d8eab12728cad65b205a",
   "membership": "fixed",
   "signers": [
-    "33fae47a80fd731aa9a177ea9754ae3435d978f4e2a9e4adaf44c41dfed9a2e8"
+    "33fae47a80fd731aa9a177ea9754ae3435d978f4e2a9e4adaf44c41dfed9a2e8",
+    "f91923c299d41a40354c31f89ce610bc164862e1e17b62128a5caab9d6b1f249"
   ],
-  "memberSnapshotDigest": "b95f67d99042e114aa01d0f17a57d36567bf46e29b089b66a15755f94dd9b068",
+  "memberSnapshotDigest": "cbd0ccf294be86e4bedf12000b73d71f50b1ff918c5a4b022cd43149fbc83784",
   "files": {
     "envelope": true,
     "document": false,
     "signatures": [
-      "33fae47a80fd731aa9a177ea9754ae3435d978f4e2a9e4adaf44c41dfed9a2e8"
+      "33fae47a80fd731aa9a177ea9754ae3435d978f4e2a9e4adaf44c41dfed9a2e8",
+      "f91923c299d41a40354c31f89ce610bc164862e1e17b62128a5caab9d6b1f249"
     ]
   },
-  "updatedAt": 1795071423
+  "updatedAt": 1795072008
 }
