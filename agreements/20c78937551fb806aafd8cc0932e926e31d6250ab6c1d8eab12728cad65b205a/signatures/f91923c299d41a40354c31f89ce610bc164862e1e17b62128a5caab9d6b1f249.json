@@ -1,0 +1,17 @@
+{
+  "protocol": "prn-public-signature/1",
+  "contract": "20c78937551fb806aafd8cc0932e926e31d6250ab6c1d8eab12728cad65b205a",
+  "member": {
+    "card": {
+      "boxKey": "MCowBQYDK2VuAyEAs8_sjjs-gsYApugvA5TD-6fA4l2dbAMflzI_n0CwCC8",
+      "id": "f91923c299d41a40354c31f89ce610bc164862e1e17b62128a5caab9d6b1f249",
+      "signKey": "MCowBQYDK2VwAyEACx354emnE8WJuJrpTf5VoAF8S2F1iEST1bHqLA31m-c"
+    },
+    "signature": {
+      "contract": "20c78937551fb806aafd8cc0932e926e31d6250ab6c1d8eab12728cad65b205a",
+      "protocol": "prn-contract-signature/1",
+      "signature": "3S8C7wJEQU7dOgNa-ne0TThiWcolCCNAaHF_v2yP5vbhYc_CiAzUqsZWGkMxxiOZHYc0dWPitHSUJtqKN7zpAw",
+      "signer": "f91923c299d41a40354c31f89ce610bc164862e1e17b62128a5caab9d6b1f249"
+    }
+  }
+}
