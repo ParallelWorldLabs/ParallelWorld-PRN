@@ -1,0 +1,19 @@
+{
+  "protocol": "prn-remote-index/1",
+  "contract": "eda8468a4bddfa36e47a222e36f28b350964e2810f96d94943af4f7caf42e1f8",
+  "membership": "open",
+  "signers": [
+    "33fae47a80fd731aa9a177ea9754ae3435d978f4e2a9e4adaf44c41dfed9a2e8",
+    "f91923c299d41a40354c31f89ce610bc164862e1e17b62128a5caab9d6b1f249"
+  ],
+  "memberSnapshotDigest": "e9ffb6530d5a746ea7dc03ffdf9768a80a89b47bf590bfc4970de3f5888cf09a",
+  "files": {
+    "envelope": true,
+    "document": false,
+    "signatures": [
+      "33fae47a80fd731aa9a177ea9754ae3435d978f4e2a9e4adaf44c41dfed9a2e8",
+      "f91923c299d41a40354c31f89ce610bc164862e1e17b62128a5caab9d6b1f249"
+    ]
+  },
+  "updatedAt": 1795078288
+}
