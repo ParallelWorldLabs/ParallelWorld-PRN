@@ -3,15 +3,17 @@
   "contract": "ced32361fbd8cc04db76111fade9d8f332d2df8f44da2d7f1677a086cb30149c",
   "membership": "open",
   "signers": [
+    "33fae47a80fd731aa9a177ea9754ae3435d978f4e2a9e4adaf44c41dfed9a2e8",
     "f91923c299d41a40354c31f89ce610bc164862e1e17b62128a5caab9d6b1f249"
   ],
-  "memberSnapshotDigest": "83d3c58d94a1b39013a88b8daa4e5209e2cb597960a833dcf0c76b2202ff767b",
+  "memberSnapshotDigest": "cbc2bfb646effce1639958adea9800cc0ebfa00f0fcf0343e0f18f7572a67be0",
   "files": {
     "envelope": true,
     "document": false,
     "signatures": [
+      "33fae47a80fd731aa9a177ea9754ae3435d978f4e2a9e4adaf44c41dfed9a2e8",
       "f91923c299d41a40354c31f89ce610bc164862e1e17b62128a5caab9d6b1f249"
     ]
   },
-  "updatedAt": 1795068632
+  "updatedAt": 1795068800
 }
